@@ -1,0 +1,5 @@
+## Interface: 11200
+## Notes: Check my own DPS on the last mob
+## Version: 1.0
+
+myDPS.lua
