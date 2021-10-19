@@ -1,4 +1,4 @@
-local myDPSFrame = CreateFrame("Frame", "lockinfomyDPSFrame", UIParent)
+local myDPSFrame = CreateFrame("Frame", "myDPSFrame", UIParent)
 
 myDPSFrame:SetWidth(100)
 myDPSFrame:SetHeight(100)
