@@ -4,6 +4,7 @@ myDPSFrame:SetWidth(100)
 myDPSFrame:SetHeight(100)
 myDPSFrame:SetPoint("CENTER", UIParent)
 myDPSFrame:RegisterEvent("CHAT_MSG_SPELL_SELF_DAMAGE")
+myDPSFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
 
 myDPSFrame:SetScript("OnEvent", function()
   if string.find(arg1, "Fireball") then
