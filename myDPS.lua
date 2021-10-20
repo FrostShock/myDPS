@@ -2,8 +2,8 @@
 
 local myDPSFrame = CreateFrame("Frame", "myDPSFrame", UIParent)
 
-myDPSFrame:SetWidth(200)
-myDPSFrame:SetHeight(200)
+myDPSFrame:SetWidth(160)
+myDPSFrame:SetHeight(50)
 myDPSFrame:SetPoint("CENTER", UIParent)
 myDPSFrame:EnableMouse(true)
 myDPSFrame:SetMovable(true)
@@ -20,9 +20,9 @@ myDPSFrame:SetScript("OnMouseUp", function()
   end
 end)
 
--- local tex = myDPSFrame:CreateTexture(nil, "BACKGROUND")
--- tex:SetAllPoints()
--- tex:SetColorTexture(1, 1, 1, 0.5)
+local tex = myDPSFrame:CreateTexture(nil, "BACKGROUND")
+tex:SetAllPoints()
+tex:SetTexture(1, 1, 1, 0.1)
 
 -----------------------------------------------------
 
