@@ -2,9 +2,10 @@
 
 local myDPSFrame = CreateFrame("Frame", "myDPSFrame", UIParent)
 
-myDPSFrame:SetWidth(100)
-myDPSFrame:SetHeight(100)
+myDPSFrame:SetWidth(300)
+myDPSFrame:SetHeight(300)
 myDPSFrame:SetPoint("CENTER", UIParent)
+myDPSFrame:SetBackdropColor(0.7, 0.7, 0.7, 0.7)
 myDPSFrame:RegisterEvent("CHAT_MSG_SPELL_SELF_DAMAGE")
 myDPSFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
 
@@ -12,7 +13,7 @@ myDPSFrame:SetScript("OnEvent", function()
 --  DEFAULT_CHAT_FRAME:AddMessage(event.." - "..type(event))
 --  DEFAULT_CHAT_FRAME:AddMessage(arg1)
   if event == "CHAT_MSG_SPELL_SELF_DAMAGE" then
-    if string.find(arg1, "Your ") then
+    if string.find(arg1, "Your ") and string.find(arg1, " hits ") then
       _,_,sdmg = string.find(arg1, "(%d+)")
       dmg = tonumber(sdmg)
       mydps = mydps + dmg
