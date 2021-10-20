@@ -1,5 +1,3 @@
 # myDPS
 
-It prints the damage made to the last mob.
-
-Work in progress
+Vanilla WoW (1.12.1) addon - It prints the damage made in the last fight.
