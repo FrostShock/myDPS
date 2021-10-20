@@ -22,7 +22,7 @@ myDPSFrame:SetScript("OnEvent", function()
       mydps = mydps + dmg
       if not (smydps == "") then smydps = smydps.." + " end
       smydps = smydps..sdmg
-      DEFAULT_CHAT_FRAME:AddMessage(dmg)
+--      DEFAULT_CHAT_FRAME:AddMessage(dmg)
     end
   elseif event == "PLAYER_REGEN_ENABLED" then
     dpsMessage = "|cffff0000Total damage in the last fight: "
