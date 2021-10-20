@@ -1,4 +1,4 @@
--- This addon is inspired from  https://github.com/vetu104/lockinfo  and it was developed with (Discord) help from Vetu
+-- This addon is inspired from  https://github.com/vetu104/lockinfo  and it was developed with (Discord) help from Vetu and from freem1nd
 
 local myDPSFrame = CreateFrame("Frame", "myDPSFrame", UIParent)
 
