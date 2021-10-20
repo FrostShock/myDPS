@@ -35,6 +35,7 @@ textFrame:RegisterEvent("CHAT_MSG_SPELL_SELF_DAMAGE")
 textFrame:RegisterEvent("CHAT_MSG_SPELL_PERIODIC_CREATURE_DAMAGE")
 textFrame:RegisterEvent("CHAT_MSG_COMBAT_SELF_HITS")
 textFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
+textFrame:RegisterEvent("PLAYER_REGEN_DISABLED")
 
 -----------------------------------------------------
 
@@ -50,29 +51,40 @@ textFrame:SetScript("OnEvent", function()
 --  DEFAULT_CHAT_FRAME:AddMessage(arg1)
 --  if (event == "CHAT_MSG_SPELL_SELF_DAMAGE") or (event == "CHAT_MSG_SPELL_PERIODIC_CREATURE_DAMAGE") or (event == "CHAT_MSG_COMBAT_SELF_HITS") then
   if event == "PLAYER_REGEN_ENABLED" then
+    TimeLeaveCombat=GetTime()
+    TimeInCombat = TimeLeaveCombat - TimeEnterCombat
+    mydps = mydamage / TimeInCombat
+    mydps = tonumber(string.format("%.1f", mydps))
+-- https://stackoverflow.com/questions/18313171/lua-rounding-numbers-and-then-truncate
+    TimeInCombat = tonumber(string.format("%.1f", TimeInCombat))
     dpsMessage = "|cffff0000Total damage in the last fight: "
-    if dpsdetails then dpsMessage = dpsMessage..smydps.." = " end
-    dpsMessage = dpsMessage..tostring(mydps)
+    if dpsdetails then dpsMessage = dpsMessage..smydamage.." = " end
+--    dpsMessage = dpsMessage..tostring(mydamage)
+    dpsMessage = dpsMessage..tostring(mydamage).." in "..TimeInCombat.." seconds = "..mydps.." dps"
     DEFAULT_CHAT_FRAME:AddMessage(dpsMessage)
-    textFrameText:SetText("Damage: "..dmg.."\nTotal: "..mydps)
-    mydps = 0
-    smydps = ""
+    textFrameText:SetText("Damage: "..dmg.."\nTotal: "..mydamage)
+    mydamage = 0
+    smydamage = ""
+  elseif event == "PLAYER_REGEN_DISABLED" then
+    TimeEnterCombat=GetTime();
   elseif not (event == "PLAYER_ENTERING_WORLD") then
     if (string.find(arg1, "Your ") and (string.find(arg1, " hits ") or string.find(arg1, " crits "))) or string.find(arg1, "You hit ") or string.find(arg1, "You crit ") or (string.find(arg1, " suffers ") and string.find(arg1, " from your ")) then
       _,_,sdmg = string.find(arg1, "(%d+)")
       dmg = tonumber(sdmg)
-      mydps = mydps + dmg
-      if not (smydps == "") then smydps = smydps.." + " end
-      smydps = smydps..sdmg
-      textFrameText:SetText("Damage: "..dmg.."\nTotal: "..mydps)
+      mydamage = mydamage + dmg
+      if not (smydamage == "") then smydamage = smydamage.." + " end
+      smydamage = smydamage..sdmg
+      textFrameText:SetText("Damage: "..dmg.."\nTotal: "..mydamage)
 --      DEFAULT_CHAT_FRAME:AddMessage(dmg)
     end
   end
 end)
 
 dmg=0
-mydps=0
-smydps=""
+mydamage=0
+smydamage=""
+TimeEnterCombat=GetTime();
+TimeLeaveCombat=GetTime();
 
 --  if you want more details then uncomment the next line
 -- dpsdetails=1
