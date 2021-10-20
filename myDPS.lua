@@ -24,7 +24,7 @@ myDPSFrame:SetScript("OnEvent", function()
       smydps = smydps..sdmg
 --      DEFAULT_CHAT_FRAME:AddMessage(dmg)
     end
-  elseif event == "PLAYER_REGEN_ENABLED" then
+  else
     dpsMessage = "|cffff0000Total damage in the last fight: "
     if dpsdetails then dpsMessage = dpsMessage..smydps.." = " end
     dpsMessage = dpsMessage..tostring(mydps)
