@@ -1,5 +1,5 @@
 ## Interface: 11200
-## Notes: Check my own DPS on the last mob
+## Notes: Prints the damage you made in the last fight
 ## Version: 1.0
 
 myDPS.lua
