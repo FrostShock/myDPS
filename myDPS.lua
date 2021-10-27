@@ -41,7 +41,8 @@ textFrame:RegisterEvent("PLAYER_REGEN_DISABLED")
 
 local textFrameText = textFrame:CreateFontString()
 textFrameText:SetPoint("CENTER", textFrame)
-textFrameText:SetFont("Interface\\AddOns\\myDPS\\Fonts\\Ubuntu-R.ttf", 14, "OUTLINE")
+-- textFrameText:SetFont("Interface\\AddOns\\myDPS\\Fonts\\Ubuntu-R.ttf", 14, "OUTLINE")
+textFrameText:SetFont("Fonts\ARLIALN.TTF", 14, "OUTLINE")
 textFrameText:SetTextColor(0.1490, 0.5451, 0.8235)
 
 -----------------------------------------------------
@@ -61,7 +62,7 @@ textFrame:SetScript("OnEvent", function()
     if dpsdetails then dpsMessage = dpsMessage..smydamage.." = " end
 --    dpsMessage = dpsMessage..tostring(mydamage)
     dpsMessage = dpsMessage..tostring(mydamage).." in "..TimeInCombat.." seconds = "..mydps.." dps"
-    DEFAULT_CHAT_FRAME:AddMessage(dpsMessage)
+    if mydamage > 0 then DEFAULT_CHAT_FRAME:AddMessage(dpsMessage) end
     textFrameText:SetText("Damage: "..dmg.."\nTotal: "..mydamage)
     mydamage = 0
     smydamage = ""
