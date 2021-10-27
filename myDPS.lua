@@ -20,6 +20,8 @@ myDPSFrame:SetScript("OnMouseUp", function()
   end
 end)
 
+myDPSFrame:SetBackdrop({bgFile = "Interface/Tooltips/UI-Tooltip-Background", edgeFile = "Interface/Tooltips/UI-Tooltip-Border", tile = true, tileSize = 32, edgeSize = 32, insets = { left = 0, right = 0, top = 0, bottom = 0 }});
+
 local tex = myDPSFrame:CreateTexture(nil, "BACKGROUND")
 tex:SetAllPoints()
 tex:SetTexture(1, 1, 1, 0.1)
@@ -41,8 +43,8 @@ textFrame:RegisterEvent("PLAYER_REGEN_DISABLED")
 
 local textFrameText = textFrame:CreateFontString()
 textFrameText:SetPoint("CENTER", textFrame)
--- textFrameText:SetFont("Interface\\AddOns\\myDPS\\Fonts\\Ubuntu-R.ttf", 14, "OUTLINE")
-textFrameText:SetFont("Fonts\ARLIALN.TTF", 14, "OUTLINE")
+textFrameText:SetFont("Interface\\AddOns\\myDPS\\Fonts\\Ubuntu-R.ttf", 14, "OUTLINE")
+-- textFrameText:SetFont("Fonts\\ARLIALN.TTF", 14)
 textFrameText:SetTextColor(0.1490, 0.5451, 0.8235)
 
 -----------------------------------------------------
