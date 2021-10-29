@@ -45,8 +45,9 @@ local textFrameText = textFrame:CreateFontString()
 textFrameText:SetPoint("CENTER", textFrame)
 -- https://classic.wowhead.com/guides/changing-wow-text-font   -   skurri.ttf   -   ARIALN.ttf   -   MORPHEUS.ttf   -   FRIZQT__.ttf
 -- textFrameText:SetFont("Interface\\AddOns\\myDPS\\Fonts\\Ubuntu-R.ttf", 14, "OUTLINE")
-textFrameText:SetFont("Fonts\\ARIALN.TTF", 14, "OUTLINE")
-textFrameText:SetTextColor(0.1490, 0.5451, 0.8235)
+--textFrameText:SetTextColor(0.1490, 0.5451, 0.8235)
+textFrameText:SetFont("Fonts\\ARIALN.TTF", 17)
+textFrameText:SetTextColor(0, 0, 0.5)
 
 -----------------------------------------------------
 
