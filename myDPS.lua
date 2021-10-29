@@ -24,7 +24,7 @@ myDPSFrame:SetBackdrop({bgFile = "Interface/Tooltips/UI-Tooltip-Background", edg
 
 local tex = myDPSFrame:CreateTexture(nil, "BACKGROUND")
 tex:SetAllPoints()
-tex:SetTexture(1, 1, 1, 0.1)
+tex:SetTexture(1, 1, 1, 0.3)
 
 -----------------------------------------------------
 
@@ -47,8 +47,8 @@ textFrameText:SetPoint("CENTER", textFrame)
 -- https://classic.wowhead.com/guides/changing-wow-text-font   -   skurri.ttf   -   ARIALN.ttf   -   MORPHEUS.ttf   -   FRIZQT__.ttf
 -- textFrameText:SetFont("Interface\\AddOns\\myDPS\\Fonts\\Ubuntu-R.ttf", 14, "OUTLINE")
 --textFrameText:SetTextColor(0.1490, 0.5451, 0.8235)
-textFrameText:SetFont("Fonts\\ARIALN.TTF", 17)
-textFrameText:SetTextColor(0, 0, 0.5)
+textFrameText:SetFont("Fonts\\FRIZQT__.ttf", 17)
+textFrameText:SetTextColor(0, 0, 0.4)
 
 -----------------------------------------------------
 
