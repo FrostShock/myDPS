@@ -43,6 +43,7 @@ textFrame:RegisterEvent("PLAYER_REGEN_DISABLED")
 
 local textFrameText = textFrame:CreateFontString()
 textFrameText:SetPoint("CENTER", textFrame)
+-- https://wowwiki-archive.fandom.com/wiki/API_FontInstance_SetFont   -   Flags   -   "OUTLINE"   -   "THICKOUTLINE"   -   "MONOCHROME"   -   "OUTLINE, MONOCHROME"
 -- https://classic.wowhead.com/guides/changing-wow-text-font   -   skurri.ttf   -   ARIALN.ttf   -   MORPHEUS.ttf   -   FRIZQT__.ttf
 -- textFrameText:SetFont("Interface\\AddOns\\myDPS\\Fonts\\Ubuntu-R.ttf", 14, "OUTLINE")
 --textFrameText:SetTextColor(0.1490, 0.5451, 0.8235)
