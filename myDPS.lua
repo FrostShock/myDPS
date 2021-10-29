@@ -20,7 +20,7 @@ myDPSFrame:SetScript("OnMouseUp", function()
   end
 end)
 
-myDPSFrame:SetBackdrop({bgFile = "Interface/Tooltips/UI-Tooltip-Background", edgeFile = "Interface/Tooltips/UI-Tooltip-Border", tile = true, tileSize = 32, edgeSize = 32, insets = { left = 0, right = 0, top = 0, bottom = 0 }});
+-- myDPSFrame:SetBackdrop({bgFile = "Interface/Tooltips/UI-Tooltip-Background", edgeFile = "Interface/Tooltips/UI-Tooltip-Border", tile = true, tileSize = 32, edgeSize = 32, insets = { left = 0, right = 0, top = 0, bottom = 0 }});
 
 local tex = myDPSFrame:CreateTexture(nil, "BACKGROUND")
 tex:SetAllPoints()
