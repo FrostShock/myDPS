@@ -2,8 +2,8 @@
 
 local myDPSFrame = CreateFrame("Frame", "myDPSFrame", UIParent)
 
-myDPSFrame:SetWidth(160)
-myDPSFrame:SetHeight(50)
+myDPSFrame:SetWidth(180)
+myDPSFrame:SetHeight(60)
 myDPSFrame:SetPoint("CENTER", UIParent)
 myDPSFrame:EnableMouse(true)
 myDPSFrame:SetMovable(true)
@@ -20,11 +20,11 @@ myDPSFrame:SetScript("OnMouseUp", function()
   end
 end)
 
--- myDPSFrame:SetBackdrop({bgFile = "Interface/Tooltips/UI-Tooltip-Background", edgeFile = "Interface/Tooltips/UI-Tooltip-Border", tile = true, tileSize = 32, edgeSize = 32, insets = { left = 0, right = 0, top = 0, bottom = 0 }});
+myDPSFrame:SetBackdrop({bgFile = "Interface/Tooltips/UI-Tooltip-Background", edgeFile = "Interface/Tooltips/UI-Tooltip-Border", tile = true, tileSize = 16, edgeSize = 16, insets = { left = 0, right = 0, top = 0, bottom = 0 }});
 
 local tex = myDPSFrame:CreateTexture(nil, "BACKGROUND")
 tex:SetAllPoints()
-tex:SetTexture(1, 1, 1, 0.3)
+tex:SetTexture(1, 1, 1, 0.1)
 
 -----------------------------------------------------
 
@@ -32,7 +32,7 @@ local textFrame = CreateFrame("Frame", nil, UIParent)
 textFrame:SetWidth(1)
 textFrame:SetHeight(1)
 textFrame:SetPoint("CENTER", myDPSFrame)
-textFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
+-- textFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
 textFrame:RegisterEvent("CHAT_MSG_SPELL_SELF_DAMAGE")
 textFrame:RegisterEvent("CHAT_MSG_SPELL_PERIODIC_CREATURE_DAMAGE")
 textFrame:RegisterEvent("CHAT_MSG_COMBAT_SELF_HITS")
@@ -45,10 +45,10 @@ local textFrameText = textFrame:CreateFontString()
 textFrameText:SetPoint("CENTER", textFrame)
 -- https://wowwiki-archive.fandom.com/wiki/API_FontInstance_SetFont   -   Flags   -   "OUTLINE"   -   "THICKOUTLINE"   -   "MONOCHROME"   -   "OUTLINE, MONOCHROME"
 -- https://classic.wowhead.com/guides/changing-wow-text-font   -   skurri.ttf   -   ARIALN.ttf   -   MORPHEUS.ttf   -   FRIZQT__.ttf
--- textFrameText:SetFont("Fonts\\FRIZQT__.ttf", 17)
--- textFrameText:SetTextColor(0, 0, 0.4)
-textFrameText:SetFont("Interface\\AddOns\\myDPS\\Fonts\\Ubuntu-R.ttf", 14, "OUTLINE")
-textFrameText:SetTextColor(0.1490, 0.5451, 0.8235)
+textFrameText:SetFont("Fonts\\FRIZQT__.ttf", 17)
+textFrameText:SetTextColor(0, 0, 0.4)
+-- textFrameText:SetFont("Interface\\AddOns\\myDPS\\Fonts\\Ubuntu-R.ttf", 16, "OUTLINE")
+-- textFrameText:SetTextColor(0.1490, 0.5451, 0.8235)
 
 -----------------------------------------------------
 
