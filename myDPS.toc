@@ -1,5 +1,5 @@
 ## Interface: 11200
 ## Notes: Prints the damage you made in the last fight
-## Version: 1.0
+## Version: 2.1
 
 myDPS.lua
